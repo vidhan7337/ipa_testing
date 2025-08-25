@@ -6,19 +6,27 @@ on:
 jobs:
   build-ios:
     name: 🎉 iOS Build
-    runs-on: macos-latest
+    runs-on: macos-14   # ✅ Use macOS 14 (Xcode 15.4 preinstalled)
+
     steps:
       - uses: actions/checkout@v3
+
+      - name: Select Xcode 15.4
+        run: sudo xcode-select -switch /Applications/Xcode_15.4.app
 
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
           architecture: x64
-      - run: flutter pub get
-      
 
-      - run: pod repo update
-        working-directory: ios
+      - run: flutter pub get
+
+      # ✅ Clean & install fresh Pods (avoid cached broken FirebaseSharedSwift)
+      - run: |
+          cd ios
+          pod deintegrate
+          pod repo update
+          pod install
 
       - run: flutter build ios --release --no-codesign
 
