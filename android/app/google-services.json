@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "415579853261",
+    "project_id": "library-app-7deed",
+    "storage_bucket": "library-app-7deed.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415579853261:android:b95bb207eaedd7d8e3b484",
+        "android_client_info": {
+          "package_name": "com.example.lib_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD-aTpl08VYwESNgZ4oQTjCqttkEcxu14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
